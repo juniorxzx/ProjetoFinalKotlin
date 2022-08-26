@@ -1,17 +1,26 @@
 package cadastro
 
-private class Funcionarios(
+ class Funcionarios(
     nome: String,
-    cpf: Int,
+    cpf: String,
     endereco: String,
     telefone: String,
 
 ) : Cadastro(nome, cpf, endereco, telefone){
 
 
-    override fun cadastrar() {
+     override fun cadastrar(){
+         print("Funcionário foi cadastrado com sucesso")
 
-    }
+     }
+
+     override fun excluir() {
+         print("Funcionário excluído com sucesso")
+     }
+
+     override fun toString(): String {
+         return "$nome | $cpf | $endereco | $telefone | $email"
+     }
 
 
 }

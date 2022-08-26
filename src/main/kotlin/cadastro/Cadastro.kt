@@ -3,7 +3,7 @@ package cadastro
 abstract class Cadastro(
 
     val nome: String,
-    val cpf: Int,
+    val cpf: String,
     val endereco: String,
     val telefone: String,
 )
@@ -15,19 +15,22 @@ abstract class Cadastro(
     constructor(
 
         nome: String,
-        cpf: Int,
+        cpf: String,
         endereco: String,
         telefone: String,
         email: String,
-//        id: String,
-//        funcao: String
+
 
     ) : this(nome, cpf,endereco,telefone){
             this.email = email
-//            this.id = id
-//            this.funcao = funcao
+
         }
 
+    init {
+        if (cpf == ""){
+           throw Exception("Não foi possivel cadastrar um CPF vazio")
+        }
+    }
      open fun cadastrar(){
         print("")
     }
