@@ -1,0 +1,4 @@
+package cardapio
+
+class Cardapio {
+}
